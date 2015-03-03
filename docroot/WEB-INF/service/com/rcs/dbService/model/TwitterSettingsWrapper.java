@@ -460,7 +460,8 @@ public class TwitterSettingsWrapper implements TwitterSettings,
 	}
 
 	@Override
-	public int compareTo(TwitterSettings twitterSettings) {
+	public int compareTo(
+		com.rcs.dbService.model.TwitterSettings twitterSettings) {
 		return _twitterSettings.compareTo(twitterSettings);
 	}
 
@@ -470,17 +471,17 @@ public class TwitterSettingsWrapper implements TwitterSettings,
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<TwitterSettings> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<com.rcs.dbService.model.TwitterSettings> toCacheModel() {
 		return _twitterSettings.toCacheModel();
 	}
 
 	@Override
-	public TwitterSettings toEscapedModel() {
+	public com.rcs.dbService.model.TwitterSettings toEscapedModel() {
 		return new TwitterSettingsWrapper(_twitterSettings.toEscapedModel());
 	}
 
 	@Override
-	public TwitterSettings toUnescapedModel() {
+	public com.rcs.dbService.model.TwitterSettings toUnescapedModel() {
 		return new TwitterSettingsWrapper(_twitterSettings.toUnescapedModel());
 	}
 

@@ -544,7 +544,7 @@ public class TweetWrapper implements Tweet, ModelWrapper<Tweet> {
 	}
 
 	@Override
-	public int compareTo(Tweet tweet) {
+	public int compareTo(com.rcs.dbService.model.Tweet tweet) {
 		return _tweet.compareTo(tweet);
 	}
 
@@ -554,17 +554,17 @@ public class TweetWrapper implements Tweet, ModelWrapper<Tweet> {
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<Tweet> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<com.rcs.dbService.model.Tweet> toCacheModel() {
 		return _tweet.toCacheModel();
 	}
 
 	@Override
-	public Tweet toEscapedModel() {
+	public com.rcs.dbService.model.Tweet toEscapedModel() {
 		return new TweetWrapper(_tweet.toEscapedModel());
 	}
 
 	@Override
-	public Tweet toUnescapedModel() {
+	public com.rcs.dbService.model.Tweet toUnescapedModel() {
 		return new TweetWrapper(_tweet.toUnescapedModel());
 	}
 

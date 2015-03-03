@@ -11,7 +11,7 @@ create table twitter_Tweet (
 	tweetCreatedAt DATE null,
 	tweetRetweeted BOOLEAN,
 	tweetRetweetCount INTEGER,
-	tweetText VARCHAR(75) null,
+	tweetText VARCHAR(200) null,
 	primary key (groupId, tweetId)
 );
 

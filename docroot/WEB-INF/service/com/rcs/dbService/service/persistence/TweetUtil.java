@@ -237,7 +237,7 @@ public class TweetUtil {
 	* @throws SystemException if a system exception occurred
 	*/
 	public static com.rcs.dbService.model.Tweet[] findByGroupId_PrevAndNext(
-		TweetPK tweetPK, long groupId,
+		com.rcs.dbService.service.persistence.TweetPK tweetPK, long groupId,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException,
 			com.rcs.dbService.NoSuchTweetException {
@@ -416,7 +416,8 @@ public class TweetUtil {
 	* @throws SystemException if a system exception occurred
 	*/
 	public static com.rcs.dbService.model.Tweet[] findByGroupIdTweetId_PrevAndNext(
-		TweetPK tweetPK, long groupId, long tweetId,
+		com.rcs.dbService.service.persistence.TweetPK tweetPK, long groupId,
+		long tweetId,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException,
 			com.rcs.dbService.NoSuchTweetException {
@@ -475,7 +476,8 @@ public class TweetUtil {
 	* @param tweetPK the primary key for the new tweet
 	* @return the new tweet
 	*/
-	public static com.rcs.dbService.model.Tweet create(TweetPK tweetPK) {
+	public static com.rcs.dbService.model.Tweet create(
+		com.rcs.dbService.service.persistence.TweetPK tweetPK) {
 		return getPersistence().create(tweetPK);
 	}
 
@@ -487,7 +489,8 @@ public class TweetUtil {
 	* @throws com.rcs.dbService.NoSuchTweetException if a tweet with the primary key could not be found
 	* @throws SystemException if a system exception occurred
 	*/
-	public static com.rcs.dbService.model.Tweet remove(TweetPK tweetPK)
+	public static com.rcs.dbService.model.Tweet remove(
+		com.rcs.dbService.service.persistence.TweetPK tweetPK)
 		throws com.liferay.portal.kernel.exception.SystemException,
 			com.rcs.dbService.NoSuchTweetException {
 		return getPersistence().remove(tweetPK);
@@ -508,7 +511,7 @@ public class TweetUtil {
 	* @throws SystemException if a system exception occurred
 	*/
 	public static com.rcs.dbService.model.Tweet findByPrimaryKey(
-		TweetPK tweetPK)
+		com.rcs.dbService.service.persistence.TweetPK tweetPK)
 		throws com.liferay.portal.kernel.exception.SystemException,
 			com.rcs.dbService.NoSuchTweetException {
 		return getPersistence().findByPrimaryKey(tweetPK);
@@ -522,7 +525,7 @@ public class TweetUtil {
 	* @throws SystemException if a system exception occurred
 	*/
 	public static com.rcs.dbService.model.Tweet fetchByPrimaryKey(
-		TweetPK tweetPK)
+		com.rcs.dbService.service.persistence.TweetPK tweetPK)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		return getPersistence().fetchByPrimaryKey(tweetPK);
 	}

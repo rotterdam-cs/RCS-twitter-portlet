@@ -77,7 +77,7 @@ public class TweetModelImpl extends BaseModelImpl<Tweet> implements TweetModel {
 			{ "tweetRetweetCount", Types.INTEGER },
 			{ "tweetText", Types.VARCHAR }
 		};
-	public static final String TABLE_SQL_CREATE = "create table twitter_Tweet (groupId LONG not null,companyId LONG,userId LONG,userName VARCHAR(75) null,createDate DATE null,modifiedDate BOOLEAN,removed BOOLEAN,tweetId LONG not null,tweetIdStr VARCHAR(75) null,tweetCreatedAt DATE null,tweetRetweeted BOOLEAN,tweetRetweetCount INTEGER,tweetText VARCHAR(75) null,primary key (groupId, tweetId))";
+	public static final String TABLE_SQL_CREATE = "create table twitter_Tweet (groupId LONG not null,companyId LONG,userId LONG,userName VARCHAR(75) null,createDate DATE null,modifiedDate BOOLEAN,removed BOOLEAN,tweetId LONG not null,tweetIdStr VARCHAR(75) null,tweetCreatedAt DATE null,tweetRetweeted BOOLEAN,tweetRetweetCount INTEGER,tweetText VARCHAR(200) null,primary key (groupId, tweetId))";
 	public static final String TABLE_SQL_DROP = "drop table twitter_Tweet";
 	public static final String ORDER_BY_JPQL = " ORDER BY tweet.tweetCreatedAt DESC";
 	public static final String ORDER_BY_SQL = " ORDER BY twitter_Tweet.tweetCreatedAt DESC";

@@ -147,7 +147,7 @@ public interface TweetPersistence extends BasePersistence<Tweet> {
 	* @throws SystemException if a system exception occurred
 	*/
 	public com.rcs.dbService.model.Tweet[] findByGroupId_PrevAndNext(
-		TweetPK tweetPK, long groupId,
+		com.rcs.dbService.service.persistence.TweetPK tweetPK, long groupId,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException,
 			com.rcs.dbService.NoSuchTweetException;
@@ -293,7 +293,8 @@ public interface TweetPersistence extends BasePersistence<Tweet> {
 	* @throws SystemException if a system exception occurred
 	*/
 	public com.rcs.dbService.model.Tweet[] findByGroupIdTweetId_PrevAndNext(
-		TweetPK tweetPK, long groupId, long tweetId,
+		com.rcs.dbService.service.persistence.TweetPK tweetPK, long groupId,
+		long tweetId,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException,
 			com.rcs.dbService.NoSuchTweetException;
@@ -340,7 +341,8 @@ public interface TweetPersistence extends BasePersistence<Tweet> {
 	* @param tweetPK the primary key for the new tweet
 	* @return the new tweet
 	*/
-	public com.rcs.dbService.model.Tweet create(TweetPK tweetPK);
+	public com.rcs.dbService.model.Tweet create(
+		com.rcs.dbService.service.persistence.TweetPK tweetPK);
 
 	/**
 	* Removes the tweet with the primary key from the database. Also notifies the appropriate model listeners.
@@ -350,7 +352,8 @@ public interface TweetPersistence extends BasePersistence<Tweet> {
 	* @throws com.rcs.dbService.NoSuchTweetException if a tweet with the primary key could not be found
 	* @throws SystemException if a system exception occurred
 	*/
-	public com.rcs.dbService.model.Tweet remove(TweetPK tweetPK)
+	public com.rcs.dbService.model.Tweet remove(
+		com.rcs.dbService.service.persistence.TweetPK tweetPK)
 		throws com.liferay.portal.kernel.exception.SystemException,
 			com.rcs.dbService.NoSuchTweetException;
 
@@ -366,7 +369,8 @@ public interface TweetPersistence extends BasePersistence<Tweet> {
 	* @throws com.rcs.dbService.NoSuchTweetException if a tweet with the primary key could not be found
 	* @throws SystemException if a system exception occurred
 	*/
-	public com.rcs.dbService.model.Tweet findByPrimaryKey(TweetPK tweetPK)
+	public com.rcs.dbService.model.Tweet findByPrimaryKey(
+		com.rcs.dbService.service.persistence.TweetPK tweetPK)
 		throws com.liferay.portal.kernel.exception.SystemException,
 			com.rcs.dbService.NoSuchTweetException;
 
@@ -377,7 +381,8 @@ public interface TweetPersistence extends BasePersistence<Tweet> {
 	* @return the tweet, or <code>null</code> if a tweet with the primary key could not be found
 	* @throws SystemException if a system exception occurred
 	*/
-	public com.rcs.dbService.model.Tweet fetchByPrimaryKey(TweetPK tweetPK)
+	public com.rcs.dbService.model.Tweet fetchByPrimaryKey(
+		com.rcs.dbService.service.persistence.TweetPK tweetPK)
 		throws com.liferay.portal.kernel.exception.SystemException;
 
 	/**

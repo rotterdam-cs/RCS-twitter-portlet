@@ -34,16 +34,17 @@
 	<portlet>
 		<portlet-name>twittersettings</portlet-name>
 		<display-name>Twittersettings</display-name>
-		<portlet-class>com.rcs.portlet.Twittersetting</portlet-class>
+		<portlet-class>com.rcs.portlet.TwitterSetting</portlet-class>
 		<init-param>
 			<name>view-template</name>
-			<value>/html/twittersetting/view.jsp</value>
+			<value>/html/twitterSetting/view.jsp</value>
 		</init-param>
 		<expiration-cache>0</expiration-cache>
 		<supports>
 			<mime-type>text/html</mime-type>
 			<portlet-mode>view</portlet-mode>
 		</supports>
+		<resource-bundle>com.rcs.content.twitter-settings.Language</resource-bundle>
 		<portlet-info>
 			<title>Twittersettings</title>
 			<short-title>Twittersettings</short-title>
@@ -68,13 +69,14 @@
 		<portlet-class>com.rcs.portlet.SchedulerSettings</portlet-class>
 		<init-param>
 			<name>view-template</name>
-			<value>/html/schedulersettings/view.jsp</value>
+			<value>/html/schedulerSettings/edit.jsp</value>
 		</init-param>
 		<expiration-cache>0</expiration-cache>
-		<supports>
+		<supports> 
 			<mime-type>text/html</mime-type>
 			<portlet-mode>view</portlet-mode>
 		</supports>
+  		<resource-bundle>com.rcs.content.scheduler-settings.Language</resource-bundle>
 		<portlet-info>
 			<title>Scheduler Settings</title>
 			<short-title>Scheduler Settings</short-title>
@@ -99,13 +101,14 @@
 		<portlet-class>com.rcs.portlet.DisplayTweets</portlet-class>
 		<init-param>
 			<name>view-template</name>
-			<value>/html/displaytweets/view.jsp</value>
+			<value>/html/displayTweets/view.jsp</value>
 		</init-param>
 		<expiration-cache>0</expiration-cache>
 		<supports>
 			<mime-type>text/html</mime-type>
 			<portlet-mode>view</portlet-mode>
 		</supports>
+  		<resource-bundle>com.rcs.content.display-tweets.Language</resource-bundle>
 		<portlet-info>
 			<title>Display Tweets</title>
 			<short-title>Display Tweets</short-title>

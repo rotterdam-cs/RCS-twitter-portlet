@@ -1,0 +1,5 @@
+/docroot/WEB-INF/classes/
+/.settings
+/.project
+/.classpath
+*.sass-cache/*
