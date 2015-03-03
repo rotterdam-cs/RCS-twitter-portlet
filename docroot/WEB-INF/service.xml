@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
+<service-builder package-path="com.rcs.dbService">
+	<author>rcs</author>
+	<namespace>twitter</namespace>
+
+	<entity name="Tweet" local-service="true">
+		<!-- PK fields -->
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long" primary="true"></column>
+
+		<!-- Audit fields -->        
+		<column name="companyId" type="long" />				      
+        <column name="userId" type="long" />
+        <column name="userName" type="String" />
+        <column name="createDate" type="Date" />
+        <column name="modifiedDate" type="boolean" />
+        <column name="removed" type="boolean" />
+
+		<!-- Other fields -->
+		<column name="tweetId" type="long" primary="true"></column>
+		<column name="tweetIdStr" type="String"></column>
+		<column name="tweetCreatedAt" type="Date"></column>
+		<column name="tweetRetweeted" type="boolean"></column>
+		<column name="tweetRetweetCount" type="int"></column>
+		<column name="tweetText" type="String"></column>
+        
+		<!-- Order -->
+		<order by="desc">
+            <order-column name="tweetCreatedAt" order-by="desc"></order-column>
+		</order>
+
+		<!-- Finder methods -->
+		<finder name="GroupId" return-type="Collection">
+			<finder-column name="groupId" />
+		</finder>
+		
+		<finder name="GroupIdTweetId" return-type="Collection">
+			<finder-column name="groupId" />
+			<finder-column name="tweetId" />
+		</finder>
+	</entity>
+	
+    <entity name="TwitterSettings" local-service="true">
+
+		<!-- PK fields -->
+
+		<!-- Group instance -->
+		<column name="groupId" type="long" primary="true"/>
+
+		<!-- Audit fields -->        
+		<column name="companyId" type="long" />				      
+        <column name="userId" type="long" />
+        <column name="userName" type="String" />
+        <column name="createDate" type="Date" />
+        <column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+        <column name="applicationName" type="String" primary="false"></column>
+        <column name="consumerKey" type="String"></column>
+        <column name="consumerKeySecret" type="String"></column>
+        <column name="accessToken" type="String"></column>
+        <column name="accessTokenSecret" type="String"></column>
+        
+        
+		<!-- Finder methods -->
+        <finder name="byGroupId" return-type="collection">
+            <finder-column name="groupId"></finder-column>
+        </finder>
+	</entity>
+	
+</service-builder>

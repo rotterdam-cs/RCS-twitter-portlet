@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="com.rcs.dbService.service.TweetLocalService" class="com.rcs.dbService.service.impl.TweetLocalServiceImpl" />
+	<bean id="com.rcs.dbService.service.TweetService" class="com.rcs.dbService.service.impl.TweetServiceImpl" />
+	<bean id="com.rcs.dbService.service.persistence.TweetPersistence" class="com.rcs.dbService.service.persistence.TweetPersistenceImpl" parent="basePersistence" />
+	<bean id="com.rcs.dbService.service.TwitterSettingsLocalService" class="com.rcs.dbService.service.impl.TwitterSettingsLocalServiceImpl" />
+	<bean id="com.rcs.dbService.service.TwitterSettingsService" class="com.rcs.dbService.service.impl.TwitterSettingsServiceImpl" />
+	<bean id="com.rcs.dbService.service.persistence.TwitterSettingsPersistence" class="com.rcs.dbService.service.persistence.TwitterSettingsPersistenceImpl" parent="basePersistence" />
+</beans>

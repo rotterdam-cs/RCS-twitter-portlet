@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.rcs.dbService.model.Tweet">
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="boolean" />
+		<field name="removed" type="boolean" />
+		<field name="tweetId" type="long" />
+		<field name="tweetIdStr" type="String" />
+		<field name="tweetCreatedAt" type="Date" />
+		<field name="tweetRetweeted" type="boolean" />
+		<field name="tweetRetweetCount" type="int" />
+		<field name="tweetText" type="String" />
+	</model>
+	<model name="com.rcs.dbService.model.TwitterSettings">
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="applicationName" type="String" />
+		<field name="consumerKey" type="String" />
+		<field name="consumerKeySecret" type="String" />
+		<field name="accessToken" type="String" />
+		<field name="accessTokenSecret" type="String" />
+	</model>
+</model-hints>
