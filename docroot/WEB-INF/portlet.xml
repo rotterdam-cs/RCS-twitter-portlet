@@ -3,7 +3,7 @@
 <portlet-app xmlns="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd" version="2.0">
 	<portlet>
 		<portlet-name>RCS-twitter</portlet-name>
-		<display-name>RCS twitter portlet</display-name>
+		<display-name>RCS twitter feed</display-name>
 		<portlet-class>com.liferay.util.bridges.mvc.MVCPortlet</portlet-class>
 		<init-param>
 			<name>view-template</name>
@@ -14,9 +14,9 @@
 			<mime-type>text/html</mime-type>
 		</supports>
 		<portlet-info>
-			<title>RCS twitter portlet</title>
-			<short-title>RCS twitter portlet</short-title>
-			<keywords>RCS twitter portlet</keywords>
+			<title>RCS twitter feed</title>
+			<short-title>RCS twitter</short-title>
+			<keywords>RCS twitter feed</keywords>
 		</portlet-info>
 		<security-role-ref>
 			<role-name>administrator</role-name>
@@ -102,6 +102,10 @@
 		<init-param>
 			<name>view-template</name>
 			<value>/html/displayTweets/view.jsp</value>
+		</init-param>
+		<init-param>
+			<name>config-template</name>
+			<value>/html/displayTweets/config.jsp</value>
 		</init-param>
 		<expiration-cache>0</expiration-cache>
 		<supports>

@@ -82,6 +82,8 @@
 
 
 	String localTwitterApplicationName = LanguageUtil.get(pageContext,"twitter.application.name");
+	String localTwitterApplicationNameHelp = LanguageUtil.get(pageContext,"twitter.application.name.help");
+	String localTwitterGeneralHelp = LanguageUtil.get(pageContext,"twitter.general.help");
 
 %>
 
@@ -102,25 +104,32 @@ function Delete() {
 
 	<input name="<portlet:namespace/>delete"
 		id="<portlet:namespace/>delete" type="hidden" value="false">
+    
 
 	<aui:input name="applicationName" type="text"
-		label="<%=localTwitterApplicationName%>" value="<%=applicationName%>">
+	    title="<%=localTwitterApplicationNameHelp%>"
+		label="<%=localTwitterApplicationName%>" 
+		value="<%=applicationName%>">
 		<aui:validator name="required" />
 	</aui:input>
 
 	<aui:input name="<%=TwitterSettingsConstant.CONSUMERKEY%>" type="text"
+		title="<%=localTwitterGeneralHelp %>"
 		value="<%=consumerKey%>">
 		<aui:validator name="required" />
 	</aui:input>
 	<aui:input name="<%=TwitterSettingsConstant.CONSUMERKEYSECRET%>"
+		title="<%=localTwitterGeneralHelp %>"
 		type="text" value="<%=consumerKeySecret%>">
 		<aui:validator name="required" />
 	</aui:input>
 	<aui:input name="<%=TwitterSettingsConstant.ACCESSTOKEN%>" type="text"
+		title="<%=localTwitterGeneralHelp %>"
 		value="<%=accessToken%>">
 		<aui:validator name="required" />
 	</aui:input>
 	<aui:input name="<%=TwitterSettingsConstant.ACCESSTOKENSECRET%>"
+		title="<%=localTwitterGeneralHelp %>"
 		type="text" value="<%=accessTokenSecret%>">
 		<aui:validator name="required" />
 	</aui:input>

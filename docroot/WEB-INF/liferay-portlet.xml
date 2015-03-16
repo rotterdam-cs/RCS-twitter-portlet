@@ -6,9 +6,7 @@
 		<portlet-name>RCS-twitter</portlet-name>
 		<icon>/icon.png</icon>
 		<scheduler-entry>
-			<scheduler-description>
-				This listener is used to read tweets and put them in database 
-			</scheduler-description>
+			<scheduler-description>This listener is used to read tweets and put them in the database</scheduler-description>
 			<scheduler-event-listener-class>com.rcs.scheduler.TweetsListener</scheduler-event-listener-class>
 			<trigger>
 				<simple>
@@ -52,6 +50,9 @@
 	<portlet>
 		<portlet-name>display-tweets</portlet-name>
 		<icon>/icon.png</icon>
+        <configuration-action-class> 
+        	com.rcs.portlet.DisplayTweetsConfig
+        </configuration-action-class>
 		<header-portlet-css>/css/main.css</header-portlet-css>
 		<footer-portlet-javascript>
 			/js/main.js

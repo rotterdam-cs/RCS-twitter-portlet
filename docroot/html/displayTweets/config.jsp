@@ -24,7 +24,6 @@
 <liferay-theme:defineObjects />
 <portlet:defineObjects />
 
-
 <liferay-portlet:actionURL portletConfiguration="true"
 	var="configurationURL" />
 
