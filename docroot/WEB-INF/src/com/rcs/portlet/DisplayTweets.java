@@ -22,8 +22,8 @@ import com.liferay.portal.kernel.util.WebKeys;
 import com.liferay.portal.theme.ThemeDisplay;
 import com.liferay.util.bridges.mvc.MVCPortlet;
 import com.rcs.constants.DisplayTweetSettingsConstant;
-import com.rcs.dbService.model.Tweet;
-import com.rcs.dbService.service.TweetLocalServiceUtil;
+import com.rcs.dbservice.model.Tweet;
+import com.rcs.dbservice.service.TweetLocalServiceUtil;
 
 /**
  * Portlet implementation class DisplayTweets

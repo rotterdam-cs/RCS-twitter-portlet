@@ -13,8 +13,8 @@
 
 <%-- <%@ page import="org.codehaus.jackson.map.ObjectMapper"%> --%>
 
-<%@page import="com.rcs.dbService.service.TweetLocalServiceUtil"%>
-<%@page import="com.rcs.dbService.model.Tweet"%>
+<%@page import="com.rcs.dbservice.service.TweetLocalServiceUtil"%>
+<%@page import="com.rcs.dbservice.model.Tweet"%>
 
 <%@page import="com.liferay.portal.theme.ThemeDisplay"%>
 <%@page import="com.liferay.portal.kernel.util.WebKeys"%>

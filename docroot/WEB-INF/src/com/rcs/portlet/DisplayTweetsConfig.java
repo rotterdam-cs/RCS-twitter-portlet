@@ -17,22 +17,7 @@ public class DisplayTweetsConfig extends DefaultConfigurationAction {
         PortletConfig portletConfig, ActionRequest actionRequest,
         ActionResponse actionResponse) throws Exception {
        
-/*      
-        PortletPreferences prefs = actionRequest.getPreferences();
-        
-    	String NumberOfTweetsToLoop = prefs.getValue(DisplayTweetSettingsConstant.NUMBEROFTWEETSTOLOOP,"");
-    	String DelayInTweetsToLoop = prefs.getValue(DisplayTweetSettingsConstant.DELAYINTWEETSTOLOOP, "");
-    	String OpenElement = prefs.getValue(DisplayTweetSettingsConstant.OPENELEMENT, "");
-    	String CloseElement = prefs.getValue(DisplayTweetSettingsConstant.CLOSEELEMENT,"");
-    	String TemplatePerTweet = prefs.getValue(DisplayTweetSettingsConstant.TEMPLATEPERTWEET,"");
-    	
-    	logger.info("NumberOfTweetsToLoop :" + NumberOfTweetsToLoop);
-    	logger.info("DelayInTweetsToLoop :" + DelayInTweetsToLoop);
-    	logger.info("OpenElement :" + OpenElement);
-    	logger.info("CloseElement :" + CloseElement);
-    	logger.info("TemplatePerTweet :" + TemplatePerTweet);
-  */      
-      	super.processAction(portletConfig, actionRequest, actionResponse);
+    	super.processAction(portletConfig, actionRequest, actionResponse);
               
     }
 
