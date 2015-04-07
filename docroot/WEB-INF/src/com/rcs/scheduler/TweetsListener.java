@@ -15,11 +15,11 @@ import com.liferay.portal.kernel.log.LogFactoryUtil;
 import com.liferay.portal.kernel.messaging.Message;
 import com.liferay.portal.kernel.messaging.MessageListener;
 import com.liferay.portal.kernel.messaging.MessageListenerException;
-import com.rcs.dbService.model.Tweet;
-import com.rcs.dbService.model.TwitterSettings;
-import com.rcs.dbService.service.TweetLocalServiceUtil;
-import com.rcs.dbService.service.TwitterSettingsLocalServiceUtil;
-import com.rcs.dbService.service.persistence.TweetPK;
+import com.rcs.dbservice.model.Tweet;
+import com.rcs.dbservice.model.TwitterSettings;
+import com.rcs.dbservice.service.TweetLocalServiceUtil;
+import com.rcs.dbservice.service.TwitterSettingsLocalServiceUtil;
+import com.rcs.dbservice.service.persistence.TweetPK;
 
 public class TweetsListener implements MessageListener {
 	private static final Log LOGGER = LogFactoryUtil
@@ -59,19 +59,17 @@ public class TweetsListener implements MessageListener {
 						getTimeLine(groupId, consumerKey, consumerKeySecret,
 								accessToken, accessTokenSecret);
 					} catch (TwitterException e) {
-						LOGGER.error("Connection to Twitter failed for site "
+						LOGGER.info("Connection to Twitter failed for site "
 								+ groupId + " "
 								+ twitterSetting.getApplicationName()
 								+ " exceptioncode: " + e.getExceptionCode()
 								+ " due to:");
 
 						if (e.exceededRateLimitation() == true) {
-							LOGGER.error("Rate limit exceeded.");
+							LOGGER.info("Rate limit exceeded.");
 						} else if (e.isErrorMessageAvailable() == true) {
-							LOGGER.info("Twitterexception");
-							LOGGER.error(e.getErrorMessage());
+							LOGGER.info(e.getErrorMessage());
 						} else {
-							LOGGER.info("NO Twitterexception");
 							e.getExceptionCode();
 						}
 
@@ -152,7 +150,7 @@ public class TweetsListener implements MessageListener {
 				try {
 					tweet = TweetLocalServiceUtil.addTweet(tweet);
 				} catch (SystemException e1) {
-					LOGGER.error("Create database object failed");
+					LOGGER.info("Create database object failed");
 					e1.printStackTrace();
 				}
 			}

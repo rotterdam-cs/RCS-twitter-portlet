@@ -7,8 +7,8 @@
 			<access>PROPERTY</access>
 		</persistence-unit-defaults>
 	</persistence-unit-metadata>
-	<mapped-superclass class="com.rcs.dbService.model.impl.TweetModelImpl">
-		<id-class class="com.rcs.dbService.service.persistence.TweetPK" />
+	<mapped-superclass class="com.rcs.dbservice.model.impl.TweetModelImpl">
+		<id-class class="com.rcs.dbservice.service.persistence.TweetPK" />
 		<attributes>
 			<id name="groupId" />
 			<id name="tweetId" />
@@ -33,7 +33,7 @@
 			<transient name="userUuid" />
 		</attributes>
 	</mapped-superclass>
-	<mapped-superclass class="com.rcs.dbService.model.impl.TwitterSettingsModelImpl">
+	<mapped-superclass class="com.rcs.dbservice.model.impl.TwitterSettingsModelImpl">
 		<attributes>
 			<id name="groupId" />
 			<basic name="companyId" />
@@ -56,11 +56,11 @@
 			<transient name="userUuid" />
 		</attributes>
 	</mapped-superclass>
-	<entity class="com.rcs.dbService.model.impl.TweetImpl" name="Tweet">
+	<entity class="com.rcs.dbservice.model.impl.TweetImpl" name="Tweet">
 		<table name="twitter_Tweet" />
 		<attributes />
 	</entity>
-	<entity class="com.rcs.dbService.model.impl.TwitterSettingsImpl" name="TwitterSettings">
+	<entity class="com.rcs.dbservice.model.impl.TwitterSettingsImpl" name="TwitterSettings">
 		<table name="twitter_TwitterSettings" />
 		<attributes />
 	</entity>

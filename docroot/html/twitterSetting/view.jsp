@@ -10,8 +10,8 @@
 <%-- <%@page import="com.liferay.portal.kernel.util.WebKeys"%> --%>
 
 <%@page
-	import="com.rcs.dbService.service.TwitterSettingsLocalServiceUtil"%>
-<%@page import="com.rcs.dbService.model.TwitterSettings"%>
+	import="com.rcs.dbservice.service.TwitterSettingsLocalServiceUtil"%>
+<%@page import="com.rcs.dbservice.model.TwitterSettings"%>
 <%@page import="com.rcs.constants.TwitterSettingsConstant"%>
 
 <%@ taglib uri="http://java.sun.com/portlet_2_0" prefix="portlet"%>

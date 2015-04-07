@@ -2,11 +2,11 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping default-lazy="false" auto-import="false">
-	<import class="com.rcs.dbService.model.Tweet" />
-	<import class="com.rcs.dbService.model.TwitterSettings" />
-	<class name="com.rcs.dbService.model.impl.TweetImpl" table="twitter_Tweet">
+	<import class="com.rcs.dbservice.model.Tweet" />
+	<import class="com.rcs.dbservice.model.TwitterSettings" />
+	<class name="com.rcs.dbservice.model.impl.TweetImpl" table="twitter_Tweet">
 		<cache usage="read-write" />
-		<composite-id name="primaryKey" class="com.rcs.dbService.service.persistence.TweetPK">
+		<composite-id name="primaryKey" class="com.rcs.dbservice.service.persistence.TweetPK">
 			<key-property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
 			<key-property name="tweetId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
 		</composite-id>
@@ -22,7 +22,7 @@
 		<property name="tweetRetweetCount" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
 		<property name="tweetText" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 	</class>
-	<class name="com.rcs.dbService.model.impl.TwitterSettingsImpl" table="twitter_TwitterSettings">
+	<class name="com.rcs.dbservice.model.impl.TwitterSettingsImpl" table="twitter_TwitterSettings">
 		<cache usage="read-write" />
 		<id name="groupId" type="long">
 			<generator class="assigned" />

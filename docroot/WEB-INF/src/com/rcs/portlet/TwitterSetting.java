@@ -20,8 +20,8 @@ import com.liferay.portal.kernel.util.ParamUtil;
 import com.liferay.portal.kernel.util.WebKeys;
 import com.liferay.util.bridges.mvc.MVCPortlet;
 import com.rcs.constants.TwitterSettingsConstant;
-import com.rcs.dbService.model.TwitterSettings;
-import com.rcs.dbService.service.TwitterSettingsLocalServiceUtil;
+import com.rcs.dbservice.model.TwitterSettings;
+import com.rcs.dbservice.service.TwitterSettingsLocalServiceUtil;
 import com.liferay.portal.kernel.language.LanguageUtil;
 import com.liferay.portal.kernel.log.Log;
 import com.liferay.portal.kernel.log.LogFactoryUtil;
@@ -114,15 +114,15 @@ public class TwitterSetting extends MVCPortlet {
 				} else {
 					SessionErrors.add(actionRequest,
 							"twitterSettings-delete-error");
-					logger.error("There is an Erron in delete session");
+					logger.info("There is an Erron in delete settings");
 				}
 			}
 		} catch (PortalException e1) {
 			SessionErrors.add(actionRequest, "twitterSettings-delete-error");
-			logger.error("There is an Erron in delete session");
+			logger.info("There is an erron in delete settings");
 		} catch (SystemException e1) {
 			SessionErrors.add(actionRequest, "twitterSettings-delete-error");
-			logger.error("There is an Erron in delete session");
+			logger.info("There is an erron in delete settings");
 		}
 		String siteName = "Unknown";
 		try {
@@ -133,7 +133,6 @@ public class TwitterSetting extends MVCPortlet {
 			siteName = "Unknown";
 		}
 		actionRequest.setAttribute("siteName", siteName);
-
 	}
 
 	private void saveSettings(ActionRequest actionRequest,
@@ -171,7 +170,7 @@ public class TwitterSetting extends MVCPortlet {
 				} else {
 					SessionErrors.add(actionRequest,
 							"twitterSettings-update-error");
-					logger.error("There is an error in update settings");
+					logger.info("There is an error in update settings");
 				}
 			} else {
 				SessionErrors
@@ -202,7 +201,7 @@ public class TwitterSetting extends MVCPortlet {
 			} catch (SystemException e1) {
 				SessionErrors
 						.add(actionRequest, "twitterSettings-create-error");
-				logger.info("create failed");
+				logger.info("create settings failed");
 				e1.printStackTrace();
 			}
 

@@ -90,10 +90,7 @@ public class SchedulerSettings extends MVCPortlet {
 				"/html/schedulerSettings/edit.jsp");
 		actionRequest.setAttribute(SchedulerSettingsConstant.CRON, cron);
 
-		// returns null in jsp. why?
-		// actionResponse.setRenderParameter(SchedulerSettingsConstant.CRON,
-		// cron.toString());
-	}
+}
 
 	private void getCurrentJob() {
 		Integer milliseconds = 0;
@@ -171,7 +168,7 @@ public class SchedulerSettings extends MVCPortlet {
 			succes = true;
 		} catch (SchedulerException e) {
 			succes = false;
-			logger.warn(e);
+			logger.info(e);
 		}
 		return succes;
 	}
@@ -186,11 +183,7 @@ public class SchedulerSettings extends MVCPortlet {
 		PortletRequestDispatcher portletRequestDispatcher = getPortletContext()
 				.getRequestDispatcher(path);
 
-		if (portletRequestDispatcher == null) {
-			logger.error(path + " is not a valid include");
-		} else {
-			portletRequestDispatcher.include(renderRequest, renderResponse);
-		}
+		portletRequestDispatcher.include(renderRequest, renderResponse);
 	}
 
 	protected String viewJSP;
