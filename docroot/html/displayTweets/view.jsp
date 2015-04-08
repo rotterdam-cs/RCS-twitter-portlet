@@ -31,7 +31,6 @@
 	PortletPreferences prefs = renderRequest.getPreferences();
 
 	String jsonTweetList = (String) renderRequest.getAttribute("jsonTweetList");
-	if (jsonTweetList.isEmpty()) {jsonTweetList = "''";}
 	Integer delayInTweetsToLoop = (Integer)renderRequest.getAttribute("delayInTweetsToLoop");
 	Integer numberOfTweetsToLoop = (Integer)renderRequest.getAttribute("numberOfTweetsToLoop");
 	String openElement = (String)renderRequest.getAttribute("openElement");
@@ -50,11 +49,18 @@
 	var Counter = 0;
 	var TweetLoop;
 	var TweetList = '';
-	if ('${jsonTweetList}' !== '') {TweetList = ${jsonTweetList}; }
-
+	
+	<% if (jsonTweetList != "") { %>
+		TweetList = ${jsonTweetList};
+	<% } %>
+	
 	function tweetLoop() {
 
-		document.getElementById("<portlet:namespace/>tweetPlaceHolder").innerHTML = TweetList[Counter];
+		var TweetListElement = TweetList[Counter];
+		
+		if (TweetListElement != undefined) {
+			document.getElementById("<portlet:namespace/>tweetPlaceHolder").innerHTML = TweetListElement;
+		}
 		
 		Counter = Counter + 1;
 		if (Counter == ${numberOfTweetsToLoop}) {

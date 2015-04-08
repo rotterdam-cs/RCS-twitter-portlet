@@ -3,3 +3,4 @@
 /.project
 /.classpath
 *.sass-cache/*
+/.tern-project
