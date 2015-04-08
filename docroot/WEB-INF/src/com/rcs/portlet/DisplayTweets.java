@@ -112,7 +112,9 @@ public class DisplayTweets extends MVCPortlet {
 
 		String jsonTweetList = "";
 		try {
-			jsonTweetList = mapper.writeValueAsString(tweetList);
+			if (tweetList != null && tweetList.size() >0) {
+				jsonTweetList = mapper.writeValueAsString(tweetList);
+			}
 
 		} catch (Exception e) {
 			e.printStackTrace();
