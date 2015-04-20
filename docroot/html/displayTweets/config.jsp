@@ -72,42 +72,24 @@
 	
 	String localNumberLoop=LanguageUtil.get(pageContext,"Number.of.tweets.to.loop");
 	String localDelayLoop=LanguageUtil.get(pageContext,"Delay.in.milliseconds.in.tweets.to.loop");
-	String Please_enter_the_number_of_tweets_to_loop =LanguageUtil.get(pageContext,"Please_enter_the_number_of_tweets_to_loop");
-	String Please_enter_the_delay_in_tweets_to_loop =LanguageUtil.get(pageContext,"Please_enter_the_delay_in_tweets_to_loop");
-
 %>
 <aui:form action="<%=configurationURL%>" method="post" name="fm">
 	<aui:input name="<%=Constants.CMD%>" type="hidden"
 		value="<%=Constants.UPDATE%>" />
 
 	<aui:input name="preferences--NumberOfTweetsToLoop--" type="number"
-		value="<%=NumberOfTweetsToLoop_cfg%>" label="<%=localNumberLoop%>"
+		min="1"
+		value="<%=NumberOfTweetsToLoop_cfg%>" 
+		label="<%=localNumberLoop%>"
 		id="<portlet:namespace/><%=NumberOfTweetsToLoop_cfg%>">
-		<aui:validator name="custom"
-			errorMessage="<%=Please_enter_the_number_of_tweets_to_loop%>">
-			function (val, fieldNode, ruleValue) {
-				var result = false;
-				if (val >0) {
-					result = true;
-				}
-				return result;
-			}
-		</aui:validator>
+		<aui:validator name="min">1</aui:validator>
 	</aui:input>
 	<aui:input name="preferences--DelayInTweetsToLoop--" type="number"
+		min="1000"	
 		value="<%=DelayInTweetsToLoop_cfg%>"
 		label="<%=localDelayLoop%>"
 		id="<portlet:namespace/><%=DelayInTweetsToLoop_cfg%>">
-		<aui:validator name="custom"
-			errorMessage="<%=Please_enter_the_delay_in_tweets_to_loop%>">
-			function (val, fieldNode, ruleValue) {
-				var result = false;
-				if (val >=1000) {
-					result = true;
-				}
-				return result;
-			}
-		</aui:validator>
+		<aui:validator name="min">1000</aui:validator>
 	</aui:input>
 	
 	<aui:input name="preferences--OpenElement--" type="textarea" rows="5" cols="100"

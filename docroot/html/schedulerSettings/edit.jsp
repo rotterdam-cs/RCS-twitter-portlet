@@ -26,7 +26,9 @@
 	Integer minutes = Integer.valueOf(cron);
 
 	String localSchedulerIntervalInMinutes = LanguageUtil.get(pageContext,"Scheduler.trigger.interval.in.minutes");
-
+	String localSchedulerIntervalInMinutesErrMsg = LanguageUtil.get(pageContext,"Please.enter.0.to.stop.scheduler.or.a.positive.number.to.set.trigger.interval");
+	
+	
 %>
 
 <portlet:actionURL var="startSchedulerURL" name="startScheduler">
@@ -35,11 +37,11 @@
 
 <aui:form action="<%=startSchedulerURL%>" method="post">
 
-	<aui:input name="<%=SchedulerSettingsConstant.CRON%>" type="number"
+	<aui:input name="<%=SchedulerSettingsConstant.CRON%>" type="number"	min="0"
 		label="<%=localSchedulerIntervalInMinutes %>"
 		id="<portlet:namespace/><%=SchedulerSettingsConstant.CRON%>"
 		value="<%=minutes%>">
-		<aui:validator  name="custom"  errorMessage="Please enter 0 to stop scheduler or a positive number to set trigger interval." >
+		<aui:validator  name="custom"  errorMessage="<%=localSchedulerIntervalInMinutesErrMsg%>" >
 			function (val, fieldNode, ruleValue) {
 				var result = false;
 				if (val >=0) {
